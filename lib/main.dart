@@ -16,7 +16,7 @@ void main() async {
   );
   runApp(MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => CoffeeProvider()..fetchAllProducts()),
+        ChangeNotifierProvider(create: (_) => CoffeeProvider()..fetchAllProducts()..loadCart()),
       ],
       child: const MyApp(),
     ),);

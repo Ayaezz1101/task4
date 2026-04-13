@@ -154,17 +154,16 @@ class _CoffeeDetailsScreenState extends State<CoffeeDetailsScreen> {
       bottomNavigationBar: BuyNowBottomBar(
         price: widget.product.price.toString(),
         onBuyPressed: () {
-          final provider = context.read<CoffeeProvider>();
-          final productId = widget.product.id.toString();
-          int currentQty = provider.getProductQuantity(productId);
+  final provider = context.read<CoffeeProvider>();
+  final productId = widget.product.id.toString();
 
-          provider.updateProductQuantity(productId, currentQty + 1);
+  provider.addToCart(productId); 
 
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const OrderScreen()),
-          );
-        },
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const OrderScreen()),
+  );
+},
       ),
     );
   }

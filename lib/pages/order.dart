@@ -20,7 +20,9 @@ class OrderScreen extends StatelessWidget {
     if (provider.products.isEmpty) {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
-   final allProducts = provider.products;
+    final allProducts = provider.products.where((product) {
+      return provider.getProductQuantity(product.id.toString()) > 0;
+    }).toList();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -44,26 +46,24 @@ class OrderScreen extends StatelessWidget {
             SizedBox(height: 20.h),
 
             Column(
-          children: allProducts.map((product) {
-            return Padding(
-              padding: EdgeInsets.only(bottom: 12.h), 
-              child: OrderItemCard(
-                name: product.name,
-                type: product.type,
-                imageUrl: product.imageUrl,
-                quantity: provider.getProductQuantity(product.id.toString()),
-                onIncrement: () => provider.updateProductQuantity(
-                  product.id.toString(),
-                  provider.getProductQuantity(product.id.toString()) + 1,
-                ),
-                onDecrement: () => provider.updateProductQuantity(
-                  product.id.toString(),
-                  provider.getProductQuantity(product.id.toString()) - 1,
-                ),
-              ),
-            );
-          }).toList(),
-        ),
+              children: allProducts.map((product) {
+                return Padding(
+                  padding: EdgeInsets.only(bottom: 12.h),
+                  child: OrderItemCard(
+                    name: product.name,
+                    type: product.type,
+                    imageUrl: product.imageUrl,
+                    quantity: provider.getProductQuantity(
+                      product.id.toString(),
+                    ),
+                    onIncrement: () =>
+                        provider.addToCart(product.id.toString()),
+                    onDecrement: () =>
+                        provider.removeFromCart(product.id.toString()),
+                  ),
+                );
+              }).toList(),
+            ),
 
             SizedBox(height: 20.h),
             Container(height: 4.h, color: const Color(0xFFF9F2ED)),
@@ -72,10 +72,7 @@ class OrderScreen extends StatelessWidget {
             const DiscountTile(),
 
             SizedBox(height: 24.h),
-            PaymentSummary(
-          price: provider.getTotalPrice(), 
-          deliveryFee: 1.0,
-        ),
+            PaymentSummary(price: provider.getTotalPrice(), deliveryFee: 1.0),
 
             SizedBox(height: 24.h),
             _buildPaymentMethod(provider),
@@ -85,7 +82,11 @@ class OrderScreen extends StatelessWidget {
             CustomButton(
               text: "Order",
               width: 327.w,
-              onPressed: () {
+              onPressed: () async {
+                final provider = context.read<CoffeeProvider>();
+
+                await provider.placeOrder();
+
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => TrackingScreen()),
@@ -99,37 +100,37 @@ class OrderScreen extends StatelessWidget {
     );
   }
 
-Widget _buildPaymentMethod(CoffeeProvider provider) { 
-  return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 24.w),
-    child: Row(
-      children: [
-        Icon(
-          Icons.account_balance_wallet_outlined,
-          color: AppTheme.primaryCoffee,
-        ),
-        SizedBox(width: 12.w),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Cash/Wallet",
-              style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
-            ),
-            Text(
-              "\$ ${provider.getTotalPrice().toStringAsFixed(2)}",
-              style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w600,
-                color: AppTheme.primaryCoffee,
+  Widget _buildPaymentMethod(CoffeeProvider provider) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Row(
+        children: [
+          Icon(
+            Icons.account_balance_wallet_outlined,
+            color: AppTheme.primaryCoffee,
+          ),
+          SizedBox(width: 12.w),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Cash/Wallet",
+                style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
               ),
-            ),
-          ],
-        ),
-        const Spacer(),
-        const Icon(Icons.keyboard_arrow_down),
-      ],
-    ),
-  );
-}
+              Text(
+                "\$ ${provider.getTotalPrice().toStringAsFixed(2)}",
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: AppTheme.primaryCoffee,
+                ),
+              ),
+            ],
+          ),
+          const Spacer(),
+          const Icon(Icons.keyboard_arrow_down),
+        ],
+      ),
+    );
+  }
 }

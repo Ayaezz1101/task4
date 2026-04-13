@@ -135,14 +135,7 @@ class ProductCard extends StatelessWidget {
                         listen: false,
                       );
 
-                      int currentQty = provider.getProductQuantity(
-                        product.id.toString(),
-                      );
-
-                      provider.updateProductQuantity(
-                        product.id.toString(),
-                        currentQty + 1,
-                      );
+                      provider.addToCart(product.id.toString());
                     },
                   ),
                 ),
