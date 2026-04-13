@@ -21,6 +21,10 @@ This project isn't just a UI; it's a fully functional app with a robust backend 
 - **Cart Logic:** Handled complex cart operations, including individual product quantities using a `Map<String, int>` to ensure data integrity across the app.
 - **Theme & UI Logic:** Managing application-wide states like delivery address, notes, and subtotal calculations.
 
+### 💾 Local Storage (SharedPreferences)
+- Integrated local data persistence using `SharedPreferences` to maintain cart state across app sessions.
+- Designed an order lifecycle flow where cart items are converted into a stored order history upon checkout.
+
 ### 📍 Geolocation & Tracking
 - **Map Integration:** Used `flutter_map` (OpenStreetMap) to provide a smooth map experience without expensive API keys.
 - **Geocoding:** Integrated the `geocoding` package to convert human-readable addresses (Strings) into geographical coordinates (Latitude & Longitude).
