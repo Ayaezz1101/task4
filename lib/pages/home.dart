@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:task4/provider/coffeeProvidor.dart';
+import 'package:task4/provider/coffee_providor.dart';
 import 'package:task4/widget/category.dart';
-import 'package:task4/widget/homeBottomNav.dart';
-import 'package:task4/widget/homeHeader.dart';
-import 'package:task4/widget/promoBanner.dart';
-import 'package:task4/widget/productCard.dart';
-import 'package:task4/widget/searchBar.dart';
+import 'package:task4/widget/home_bottom_nav.dart';
+import 'package:task4/widget/home_header.dart';
+import 'package:task4/widget/promo_banner.dart';
+import 'package:task4/widget/product_card.dart';
+import 'package:task4/widget/search_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

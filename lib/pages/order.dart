@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:task4/pages/tracking.dart';
-import 'package:task4/provider/coffeeProvidor.dart';
-import 'package:task4/theme/appTheme.dart';
-import 'package:task4/widget/addressSection.dart';
-import 'package:task4/widget/brimaryButton.dart';
-import 'package:task4/widget/discountWidget.dart';
-import 'package:task4/widget/orderItemCard.dart';
-import 'package:task4/widget/pymentSummery.dart';
-import 'package:task4/widget/toggleDelivery.dart';
+import 'package:task4/provider/coffee_providor.dart';
+import 'package:task4/theme/app_theme.dart';
+import 'package:task4/widget/address_section.dart';
+import 'package:task4/widget/brimary_button.dart';
+import 'package:task4/widget/discount_widget.dart';
+import 'package:task4/widget/order_item_card.dart';
+import 'package:task4/widget/pyment_summery.dart';
+import 'package:task4/widget/toggle_delivery.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});

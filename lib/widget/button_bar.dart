@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task4/theme/appTheme.dart';
-import 'package:task4/widget/brimaryButton.dart';
+import 'package:task4/theme/app_theme.dart';
+import 'package:task4/widget/brimary_button.dart';
 
 class BuyNowBottomBar extends StatelessWidget {
   final String price;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../theme/appTheme.dart';
+import '../theme/app_theme.dart';
 
 class DeliveryToggle extends StatefulWidget {
   const DeliveryToggle({super.key});

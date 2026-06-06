@@ -3,11 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
-import 'package:task4/provider/coffeeProvidor.dart';
-import 'package:task4/theme/appTheme.dart';
-import 'package:task4/widget/iconButton.dart';
-import 'package:task4/widget/driverInfo.dart';
-import 'package:task4/widget/featureIcon.dart';
+import 'package:task4/provider/coffee_providor.dart';
+import 'package:task4/theme/app_theme.dart';
+import 'package:task4/widget/icon_button.dart';
+import 'package:task4/widget/driver_info.dart';
+import 'package:task4/widget/feature_icon.dart';
 import 'package:task4/widget/indicator.dart';
 
 class TrackingScreen extends StatefulWidget {

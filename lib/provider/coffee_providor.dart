@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:task4/model/productModel.dart';
+import 'package:task4/model/product_model.dart';
 import 'package:task4/services/supabase_service.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';

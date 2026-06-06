@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:task4/provider/coffeeProvidor.dart'; 
-import 'package:task4/model/productModel.dart'; 
+import 'package:task4/provider/coffee_providor.dart'; 
+import 'package:task4/model/product_model.dart'; 
 
 class FakeSupabaseClient extends Fake implements SupabaseClient {}
 

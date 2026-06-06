@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:task4/pages/details.dart';
-import 'package:task4/provider/coffeeProvidor.dart';
-import 'package:task4/theme/appTheme.dart';
+import 'package:task4/provider/coffee_providor.dart';
+import 'package:task4/theme/app_theme.dart';
 
 class ProductCard extends StatelessWidget {
   final dynamic product;

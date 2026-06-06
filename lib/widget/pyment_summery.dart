@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../theme/appTheme.dart';
+import '../theme/app_theme.dart';
 class PaymentSummary extends StatelessWidget {
   final double price;
   final double deliveryFee;

@@ -1,5 +1,5 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:task4/model/productModel.dart';
+import 'package:task4/model/product_model.dart';
 
 class CoffeeService {
   final supabase = Supabase.instance.client;

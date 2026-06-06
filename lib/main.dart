@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'package:task4/pages/onboarding.dart';
-import 'package:task4/provider/coffeeProvidor.dart';
-import 'package:task4/theme/appTheme.dart';
+import 'package:task4/provider/coffee_providor.dart';
+import 'package:task4/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

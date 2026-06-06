@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:task4/model/productModel.dart';
+import 'package:task4/model/product_model.dart';
 import 'package:task4/pages/order.dart';
-import 'package:task4/provider/coffeeProvidor.dart';
-import 'package:task4/widget/iconButton.dart';
-import 'package:task4/widget/buttonBar.dart';
-import 'package:task4/widget/featureIcon.dart';
+import 'package:task4/provider/coffee_providor.dart';
+import 'package:task4/widget/icon_button.dart';
+import 'package:task4/widget/button_bar.dart';
+import 'package:task4/widget/feature_icon.dart';
 import 'package:task4/widget/rating.dart';
-import 'package:task4/widget/sizeCard.dart';
-import 'package:task4/theme/appTheme.dart';
+import 'package:task4/widget/size_card.dart';
+import 'package:task4/theme/app_theme.dart';
 
 class CoffeeDetailsScreen extends StatefulWidget {
   final CoffeeModel product;

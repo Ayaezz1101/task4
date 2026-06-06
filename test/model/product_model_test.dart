@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:task4/model/productModel.dart'; 
+import 'package:task4/model/product_model.dart'; 
 
 void main() {
   group('CoffeeModel Unit Tests', () {
