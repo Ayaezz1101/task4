@@ -17,7 +17,7 @@ class CoffeeProvider extends ChangeNotifier {
   String _addressTitle = "Jl. Kpg Sutoyo";
   String _addressDetail = "Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.";
   String _deliveryNote = "";
-  int _quantity = 1;
+  final _quantity = 1;
   LatLng _userLocation = const LatLng(33.5138, 36.2765);
   Map<String, int> _itemsQuantity = {};
   List<Map<String, dynamic>> _orderHistory = [];

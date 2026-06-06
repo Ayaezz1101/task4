@@ -12,7 +12,7 @@ class FeatureIconWidget extends StatelessWidget {
       height: 44.h,
       padding: EdgeInsets.all(10.w),
       decoration: BoxDecoration(
-        color: const Color(0xFFEDEDED).withOpacity(0.35),
+        color: const Color(0xFFEDEDED).withValues(alpha: 0.35),
         borderRadius: BorderRadius.circular(12.r),
       ),
       child: Icon(icon, color: const Color(0xFFC67C4E), size: 20.sp),

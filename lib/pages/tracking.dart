@@ -18,7 +18,7 @@ class TrackingScreen extends StatefulWidget {
 }
 
 class _TrackingScreenState extends State<TrackingScreen> {
-  LatLng _driverPos = const LatLng(33.5138, 36.2765);
+final LatLng _driverPos = const LatLng(33.5138, 36.2765);
 
   @override
   void initState() {
