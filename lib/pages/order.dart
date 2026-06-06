@@ -86,7 +86,7 @@ class OrderScreen extends StatelessWidget {
                 final provider = context.read<CoffeeProvider>();
 
                 await provider.placeOrder();
-
+                if (!context.mounted) return;
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => TrackingScreen()),
